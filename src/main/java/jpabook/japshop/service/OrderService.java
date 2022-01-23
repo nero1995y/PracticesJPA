@@ -25,7 +25,7 @@ public class OrderService {
      * 주문
      */
     @Transactional
-    private Long order(Long memberId, Long itemId, int count) {
+    public Long order(Long memberId, Long itemId, int count) {
 
         //엔티티 조회
         Member member = memberRepository.findOne(memberId);
@@ -36,6 +36,7 @@ public class OrderService {
         delivery.setAddress(member.getAddress());
 
         //주문상품 생성
+        // 예제를 단순하 하기위해 하나만 했다. 멀티셀렉트를 해서 할수있는데 이건 개인이해보면 좋을것같다
         OrderItem orderItem = OrderItem.createOrderItem(item, item.getPrice(), count);
 
         //주문생성
@@ -49,7 +50,19 @@ public class OrderService {
         return order.getId();
     }
 
-    //취소
+    /**
+     * 주문 취소
+     * */
+    @Transactional
+    public void cancelOrder(Long orderId){
+        //주문 엔티티 조회
+        Order order = orderRepository.findOne(orderId);
+
+        //주문 취소
+        order.cancel();
+    }
+    // 원래 DB중심이면 쿼리에 다 넣고 다시 삭제하고 했어야 했다. 그래서 서비스로직에서 비지니스로직을 했어야했다 이게 JPA 강점 더티체킹이다.
+    // 오더에 상태를 바꿧고 오더 아이템에 스톡 컨티티가 원복이된다 이게장점아다. 총3개인듯? 다른게 오더아이템 오더
 
     //검색
 }

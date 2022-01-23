@@ -29,7 +29,7 @@ public class OrderItem {
     private int orderPrice; //주문 가격
     private int count;  //주문 수량
 
-    //컨밴션을 유지하기 위해 다른곳에 생성자를만드는것을 막는방법
+    //컨밴션을 유지하기 위해 다른곳에 생성자를만드는것을 막는방법 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 //    protected OrderItem(){}
 
     //== 생성 메서드 ==//
