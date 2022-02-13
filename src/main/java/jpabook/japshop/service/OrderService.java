@@ -8,9 +8,12 @@ import jpabook.japshop.domain.item.Item;
 import jpabook.japshop.repository.ItemRepository;
 import jpabook.japshop.repository.MemberRepository;
 import jpabook.japshop.repository.OrderRepository;
+import jpabook.japshop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
@@ -65,4 +68,7 @@ public class OrderService {
     // 오더에 상태를 바꿧고 오더 아이템에 스톡 컨티티가 원복이된다 이게장점아다. 총3개인듯? 다른게 오더아이템 오더
 
     //검색
+    public List<Order> findOrders(OrderSearch orderSearch){
+        return orderRepository.findAllByString(orderSearch);
+    }
 }
