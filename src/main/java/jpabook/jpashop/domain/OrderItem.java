@@ -1,5 +1,6 @@
 package jpabook.japshop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jpabook.japshop.domain.item.Item;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class OrderItem {
     @JoinColumn(name = "item_id")
     private Item item;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
     private Order order;  //오더가 하나가 여러개의 오더 아이템을 갖는다 FK 가 여기 있기때문에 연관관계 주인 오더?

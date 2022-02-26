@@ -1,5 +1,6 @@
 package jpabook.japshop.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,6 +22,7 @@ public class Member {
     private Address address;
 
     // 하나의 상품이 여러개의 주문을 하기때문에 //주인이 아니라서 읽기전용 !
+    @JsonIgnore
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 
