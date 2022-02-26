@@ -1,4 +1,4 @@
-package jpabook.japshop.exception;
+package jpabook.jpashop.exception;
 
 public class NotEnoughStockException extends RuntimeException{
     // 그냥 오버로이드를 해서 그냥 썻다.

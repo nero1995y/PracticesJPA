@@ -1,10 +1,10 @@
-package jpabook.japshop.api;
+package jpabook.jpashop.api;
 
-import jpabook.japshop.domain.Address;
-import jpabook.japshop.domain.Order;
-import jpabook.japshop.domain.OrderStatus;
-import jpabook.japshop.repository.OrderRepository;
-import jpabook.japshop.repository.OrderSearch;
+import jpabook.jpashop.domain.Address;
+import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.domain.OrderStatus;
+import jpabook.jpashop.repository.OrderRepository;
+import jpabook.jpashop.repository.OrderSearch;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static java.util.stream.Collectors.*;
 
 /**
  * xToOne(ManyToOne, OneToOne) //성능 최적화

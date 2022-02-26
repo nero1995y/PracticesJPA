@@ -1,8 +1,8 @@
-package jpabook.japshop.repository;
+package jpabook.jpashop.repository;
 
-import jpabook.japshop.domain.Address;
-import jpabook.japshop.domain.Order;
-import jpabook.japshop.domain.OrderStatus;
+import jpabook.jpashop.domain.Address;
+import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.domain.OrderStatus;
 import lombok.Data;
 
 import java.time.LocalDateTime;

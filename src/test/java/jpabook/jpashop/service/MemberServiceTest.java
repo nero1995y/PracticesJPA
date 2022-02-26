@@ -1,7 +1,7 @@
-package jpabook.japshop.service;
+package jpabook.jpashop.service;
 
-import jpabook.japshop.domain.Member;
-import jpabook.japshop.repository.MemberRepository;
+import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

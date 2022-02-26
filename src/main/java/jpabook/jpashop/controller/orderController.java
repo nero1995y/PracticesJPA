@@ -1,12 +1,12 @@
-package jpabook.japshop.controller;
+package jpabook.jpashop.controller;
 
-import jpabook.japshop.domain.Member;
-import jpabook.japshop.domain.Order;
-import jpabook.japshop.domain.item.Item;
-import jpabook.japshop.repository.OrderSearch;
-import jpabook.japshop.service.ItemService;
-import jpabook.japshop.service.MemberService;
-import jpabook.japshop.service.OrderService;
+import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.domain.item.Item;
+import jpabook.jpashop.repository.OrderSearch;
+import jpabook.jpashop.service.ItemService;
+import jpabook.jpashop.service.MemberService;
+import jpabook.jpashop.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
