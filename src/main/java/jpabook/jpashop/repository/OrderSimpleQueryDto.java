@@ -8,7 +8,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class SimpleOrderQueryDto {
+public class OrderSimpleQueryDto {
 
     private Long orderId;
     private String name;
@@ -16,12 +16,13 @@ public class SimpleOrderQueryDto {
     private OrderStatus orderStatus;
     private Address address;
 
-    public SimpleOrderQueryDto(Order order) {
-        orderId = order.getId();
-        name = order.getMember().getName();  //LAZY 초기화
-        orderDate = order.getOrderDate();
-        orderStatus = order.getStatus();
-        address = order.getDelivery().getAddress(); //LAZY 초기화
+    public OrderSimpleQueryDto(Long orderId, String name, LocalDateTime
+            orderDate, OrderStatus orderStatus, Address address)  {
+        this.orderId = orderId;
+        this.name = name;
+        this.orderDate = orderDate;
+        this.orderStatus = orderStatus;
+        this.address = address;
 
     }
 
