@@ -30,7 +30,7 @@ class MemberServiceTest {
         Long saveId = memberService.join(member);
         //then
         //em.flush();
-        assertEquals(member, memberRepository.findOne(saveId));
+        assertEquals(member, memberRepository.findById(saveId));
     }
     @Test //(expected = IllegalStateException.class) 4 버전
     public void 중복_회원_예외() throws Exception{

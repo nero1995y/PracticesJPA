@@ -45,14 +45,14 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    public Member findOne(Long meberId){
-        return memberRepository.findOne(meberId);
+    public Member findOne(Long memberId){
+        return memberRepository.findById(memberId).get();
     }
 
     @Transactional //변경감지 영속성 컨텍스트
     public void update(Long id, String name) {
         //영속상태를 반환
-        Member member = memberRepository.findOne(id);
+        Member member = memberRepository.findById(id).get();
         //스프링잉이 끝내는 시점에 커밋됨 그때 플러쉬하고 커밋함
         member.setName(name);
     }
